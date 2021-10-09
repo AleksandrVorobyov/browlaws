@@ -1,5 +1,5 @@
 <template lang="pug">
-#homePage.home-page
+#permanentPage.permanent-page
   braw-laws-page-back
   header
     braw-laws-header

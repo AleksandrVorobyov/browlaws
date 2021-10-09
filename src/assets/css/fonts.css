@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "TT-Italic";
+  src: url("../fonts/TT-Italic.eot");
+  src: local("☺"), url("../fonts/TT-Italic.woff") format("woff"),
+    url("../fonts/TT-Italic.ttf") format("truetype"),
+    url("../fonts/TT-Italic.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

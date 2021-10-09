@@ -1,30 +1,72 @@
-<template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+<template lang="pug">
+#page.page
   <router-view/>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+:root {
+  --bgPage: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("~@/assets/img/page-back/pattern.jpg") top left / cover no-repeat;
+  --bgNavigation: #fff;
+  --mainPincClr: #d71a75;
+  --linkFont: "TT-Italic";
+  --socialLinearInst: linear-gradient(
+    90deg,
+    rgba(233, 229, 148, 1) 0%,
+    rgba(238, 174, 202, 1) 100%
+  );
+  --socialLinearTele: linear-gradient(
+    90deg,
+    rgba(148, 227, 233, 1) 0%,
+    rgba(61, 17, 255, 1) 100%
+  );
+  --socialLinearWhat: linear-gradient(
+    90deg,
+    rgb(136, 247, 103) 0%,
+    rgb(14, 175, 54) 100%
+  );
 }
 
-#nav {
-  padding: 30px;
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+::-webkit-scrollbar-button {
+  width: 6px;
+  height: 0px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+::-webkit-scrollbar-track {
+  background-color: #32312e;
+  box-shadow: 0px 0px 3px #000 inset;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ffcb17;
+  box-shadow: 0px 1px 1px #fff inset;
+}
+
+::-webkit-resizer {
+  width: 7px;
+  height: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+.relative {
+  position: relative;
 }
 </style>
+

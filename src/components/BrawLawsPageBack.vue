@@ -1,6 +1,6 @@
 <template lang="pug">
 section#pageBack.page-back
-  div(v-for="item in pageBack", :class="item.class", :data-speed="item.speed")
+  div(v-for="item in pageBack", :class="item.class")
     img(:src="require('@/assets/img/' + item.src)")
 </template>
 <script>
@@ -16,6 +16,9 @@ export default {
     parallaxPageBack() {
       this.$store.commit("parallaxPageBack");
     },
+    iconMouseHidden() {
+      this.$store.commit("iconMouseHidden");
+    },
   },
   mounted() {
     this.createPageBg();
@@ -30,6 +33,7 @@ export default {
         }
       };
     }
+    document.addEventListener("scroll", this.iconMouseHidden);
   },
 };
 </script>
@@ -197,6 +201,7 @@ export default {
   width: 100px;
   height: 100px;
   z-index: 1;
+  transition: opacity 0.3s linear;
 
   img {
     position: absolute;
@@ -206,6 +211,10 @@ export default {
     height: 100%;
     object-fit: contain;
   }
+}
+
+.page-back__mouse.page-back__mouse--hidden {
+  opacity: 0;
 }
 
 @keyframes circlePageBg {

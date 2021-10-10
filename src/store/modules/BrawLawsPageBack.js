@@ -57,6 +57,15 @@ export default {
         item.style.transform = "translateY(" + coords + ") rotateX(180deg)";
       });
     },
+    iconMouseHidden() {
+      const iconMouse = document.querySelector(".page-back__mouse");
+
+      if (window.pageYOffset > 100) {
+        iconMouse.classList.add("page-back__mouse--hidden");
+      } else {
+        iconMouse.classList.remove("page-back__mouse--hidden");
+      }
+    },
   },
   actions: {
     createPageBg() {

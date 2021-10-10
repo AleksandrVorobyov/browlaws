@@ -8,7 +8,7 @@
   --bgPage: radial-gradient(
       circle,
       rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0.7) 100%
+      rgba(0, 0, 0, 0.6) 100%
     ),
     url("~@/assets/img/page-back/pattern.jpg") top left / cover no-repeat;
   --bgNavigation: #fff;

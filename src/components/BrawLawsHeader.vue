@@ -16,7 +16,7 @@ section.header
           h3.header__avatar-nails-title {{ item.title }}
       .header__info
         .header__info-bg
-          img(src="@/assets/img/header/pergament.png")
+          img(:src="require('@/assets/img/' + header.info.bg)")
         h1.header__info-title {{ header.info.title }}
         p.header__info-text(v-for="item in header.info.text") {{ item }}
 </template>

@@ -22,7 +22,9 @@ export default {
   },
   mounted() {
     this.createPageBg();
-    window.addEventListener("scroll", throttle(this.parallaxPageBack, 14));
+    if (window.innerWidth >= 720) {
+      window.addEventListener("scroll", throttle(this.parallaxPageBack, 14));
+    }
 
     function throttle(fn, wait) {
       var time = Date.now();
@@ -33,6 +35,7 @@ export default {
         }
       };
     }
+
     document.addEventListener("scroll", this.iconMouseHidden);
   },
 };

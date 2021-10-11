@@ -71,8 +71,6 @@ export default {
 
 .about__body-img {
   position: relative;
-  margin-bottom: 20px;
-  margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -84,11 +82,16 @@ export default {
 
   img {
     width: 100%;
-    height: 500px;
+    height: 300px;
     object-fit: cover;
     object-position: center;
     border-radius: 6px;
     overflow: hidden;
+    pointer-events: none;
+
+    @media (min-width: 580px) {
+      height: 100%;
+    }
   }
 }
 

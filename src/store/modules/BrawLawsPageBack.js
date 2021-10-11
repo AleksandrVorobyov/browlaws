@@ -91,7 +91,7 @@ export default {
             newEl.remove();
           }, 25000);
         }
-      }, 1000);
+      }, 3000);
     },
   },
 };

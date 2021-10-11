@@ -28,6 +28,17 @@ export default {
         rewind: true,
         pagination: false,
         heightRatio: 0.5,
+        breakpoints: {
+          0: {
+            height: 300,
+          },
+          480: {
+            height: 400,
+          },
+          720: {
+            height: 500,
+          },
+        },
       });
 
       var thumbnails = new Splide("#thumbnail-slider", {
@@ -61,5 +72,13 @@ export default {
 
 #thumbnail-slider {
   margin-top: 10px;
+}
+
+.parts-thumbnail-slider .splide__arrow svg {
+  fill: var(--mainPincClr);
+}
+
+.parts-thumbnail-slider .splide--nav > .splide__track > .splide__list > .splide__slide.is-active {
+  border: 3px solid var(--mainPincClr);
 }
 </style>

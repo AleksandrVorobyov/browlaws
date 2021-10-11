@@ -25,7 +25,7 @@ section#sidebar.sidebar
           a.sidebar__social-list-link(:href="item.href", :class="item.class")
             img(:src="require('@/assets/img/' + item.src)")
             h4 {{ item.title }}
-  #sidebarBtn.sidebar__btn(@click="sidebarUnlock(), fixedPage()")
+  button#sidebarBtn.sidebar__btn(@click="sidebarUnlock(), fixedPage()")
     span
 </template>
 <script>
@@ -276,6 +276,9 @@ export default {
     z-index: -1;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
+    border: none;
+    opacity: 1;
     transition: right 0.5s linear, z-index 0s linear 0.5s,
       box-shadow 0s linear 0.5s, transform 0s linear 0.5s;
   }

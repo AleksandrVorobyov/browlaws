@@ -32,10 +32,15 @@ export default {
   padding: 50px 0;
   overflow: hidden;
   z-index: 500;
-  width: calc(100% - 400px);
+  width: 100%;
   border-radius: 30px;
-  background: #fff;
+  background: var(--bgSection);
+
+  @media (min-width: 1920px) {
+    width: calc(100% - 400px);
+  }
 }
+
 .sign-up-wrap {
   position: relative;
 }
@@ -46,12 +51,43 @@ export default {
 
 .sign-up__cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  grid-auto-rows: 300px;
-  padding: 0 80px;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  grid-template-rows: 150px 150px 150px;
+  padding: 0 20px;
+
+  @media (min-width: 580px) {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px;
+  }
+
+  @media (min-width: 769px) {
+    gap: 40px;
+  }
+
+  @media (min-width: 970px) {
+    padding: 0 80px;
+  }
+}
+
+@media (min-width: 580px) {
+  .sign-up__cards .sign-up__card:first-child {
+    transform: rotateY(30deg);
+
+    &:hover {
+      transform: translateY(-10px) rotateY(30deg);
+    }
+  }
+
+  .sign-up__cards .sign-up__card:last-child {
+    transform: rotateY(-30deg);
+
+    &:hover {
+      transform: translateY(-10px) rotateY(-30deg);
+    }
+  }
 }
 
 .sign-up__card {
@@ -59,15 +95,16 @@ export default {
   width: 100%;
   height: 100%;
   background: linear-gradient(#5a5a5a, #5a5a5a);
-  transform: skew(-20deg, 0deg);
   z-index: 10;
   padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
   transition: transform 0.4s linear, background 0.4s linear, filter 0.4s linear;
   box-shadow: 0px 0px 15px var(--mainPincClr);
-  filter: grayscale(1);
+  filter: grayscale(0.7);
 
   &:hover {
-    transform: skew(-20deg, 0deg) translateY(-10px);
+    transform: translateY(-10px);
     filter: grayscale(0);
     &::before,
     &::after {
@@ -110,7 +147,7 @@ export default {
     left: 50%;
     height: 70px;
     width: 70px;
-    transform: translate(-50%, -50%) skew(20deg, 0deg);
+    transform: translate(-50%, -50%);
     transition: width 0.4s linear, height 0.4s linear;
 
     img {

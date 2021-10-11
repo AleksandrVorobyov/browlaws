@@ -1,6 +1,11 @@
 <template lang="pug">
 .parts-thumbnail-slider
-  div(v-for="(item, idx) in slider", :key="item + idx", :class="item.class", :id="item.id")
+  div(
+    v-for="(item, idx) in slider",
+    :key="item + idx",
+    :class="item.class",
+    :id="item.id"
+  )
     .splide__track
       ul.splide__list
         li.splide__slide(v-for="slide in item.slide", :key="slide")
@@ -52,5 +57,9 @@ export default {
 <style lang="scss">
 .about-carousel {
   position: relative;
+}
+
+#thumbnail-slider {
+  margin-top: 10px;
 }
 </style>

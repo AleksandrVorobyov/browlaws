@@ -1,6 +1,6 @@
 export default {
   state: {
-    navigation: {
+    sidebar: {
       list: [
         {
           href: "/",
@@ -35,19 +35,19 @@ export default {
             href: "",
             src: "social/instagram.png",
             title: "Наш instagram",
-            class: "navigation__social-instagram",
+            class: "sidebar__social-instagram",
           },
           {
             href: "",
             src: "social/telegram.png",
             title: "Наш telegram",
-            class: "navigation__social-telegram",
+            class: "sidebar__social-telegram",
           },
           {
             href: "",
             src: "social/whatsapp.png",
             title: "Наш whatsapp",
-            class: "navigation__social-whatsapp",
+            class: "sidebar__social-whatsapp",
           },
         ],
       },
@@ -55,13 +55,37 @@ export default {
         title: "Наши контакты",
         adress:
           "Адрес: Большой Кисельный переулок 14, стр 1, подъезд 2, кабинет 102",
-        map: `<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A70b43a0bda2c54dafff991af013e8c64908eb5f9761cce37e130b6d36f668c1e&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe>`,
+        map: `<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A039f756cbd17e3b7ffbe99a14593a677002c1401411e5db4bc0897a39e0755b6&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>`,
       },
     },
   },
   getters: {
-    navigation(state) {
-      return state.navigation;
+    sidebar(state) {
+      return state.sidebar;
     },
   },
+  mutations: {
+    sidebarUnlock() {
+      const sidebar = document.getElementById("sidebar");
+      const sidebarBtn = document.getElementById("sidebarBtn");
+
+      sidebar.classList.toggle("sidebar--active")
+      sidebarBtn.classList.toggle("sidebar__btn--active")
+    },
+    fixedPage() {
+      const body = document.querySelector("body");
+      let scrollPosition = window.pageYOffset;
+
+      if (!body.classList.contains('body--hidden')) {
+        body.classList.toggle("body--hidden");
+        body.style.top = '-' + scrollPosition + 'px';
+        document.body.setAttribute('data-body-scroll-fix', scrollPosition);
+      } else {
+        scrollPosition = document.body.getAttribute('data-body-scroll-fix');
+        document.body.removeAttribute('data-body-scroll-fix');
+        body.classList.toggle("body--hidden");
+        window.scroll(0, scrollPosition);
+      }
+    }
+  }
 };

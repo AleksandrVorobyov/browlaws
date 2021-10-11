@@ -42,10 +42,14 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: calc(100% - 400px);
+  width: 100%;
   height: 100%;
   z-index: 100;
   background: var(--bgPage);
+
+  @media (min-width: 1920px) {
+    width: calc(100% - 400px);
+  }
 }
 
 .page-back-top {
@@ -194,27 +198,35 @@ export default {
 }
 
 .page-back__mouse {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
-  z-index: 1;
-  transition: opacity 0.3s linear;
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+  opacity: 0;
+  pointer-events: none;
 }
 
-.page-back__mouse.page-back__mouse--hidden {
-  opacity: 0;
+@media (min-height: 1120px) {
+  .page-back__mouse {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.3s linear;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .page-back__mouse.page-back__mouse--hidden {
+    opacity: 0;
+  }
 }
 
 @keyframes circlePageBg {

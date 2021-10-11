@@ -18,9 +18,13 @@ export default {
   padding: 30px 0;
   overflow: hidden;
   z-index: 500;
-  background: white;
-  width: calc(100% - 400px);
+  background: var(--bgSection);
+  width: 100%;
   border-radius: 30px;
+
+  @media (min-width: 1920px) {
+    width: calc(100% - 400px);
+  }
 }
 .footer-wrap {
   position: relative;

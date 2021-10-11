@@ -11,7 +11,8 @@
       rgba(0, 0, 0, 0.6) 100%
     ),
     url("~@/assets/img/page-back/pattern.jpg") top left / cover no-repeat;
-  --bgNavigation: #fff;
+  --bgsidebar: #fff;
+  --bgSection: #fff;
   --mainPincClr: #d71a75;
   --linkFont: "TT-Italic";
   --socialLinearInst: linear-gradient(
@@ -67,6 +68,13 @@
 
 .relative {
   position: relative;
+}
+
+.body--hidden {
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  width: 100%;
 }
 </style>
 

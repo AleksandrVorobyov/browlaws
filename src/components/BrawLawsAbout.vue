@@ -35,11 +35,15 @@ export default {
 .about {
   position: relative;
   padding: 50px 20px;
-  width: calc(100% - 400px);
+  width: 100%;
   overflow: hidden;
   z-index: 500;
-  background: #fff;
+  background: var(--bgSection);
   border-radius: 30px;
+
+  @media (min-width: 1920px) {
+    width: calc(100% - 400px);
+  }
 }
 
 .about-wrap {
@@ -57,8 +61,12 @@ export default {
 
 .about__body-text {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1px;
+
+  @media (min-width: 480px) {
+    font-size: 18px;
+  }
 }
 
 .about__body-img {
@@ -66,9 +74,13 @@ export default {
   margin-bottom: 20px;
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
-  height: 500px;
+
+  @media (min-width: 580px) {
+    height: 500px;
+    grid-template-columns: 1fr 1fr;
+  }
 
   img {
     width: 100%;
@@ -82,8 +94,12 @@ export default {
 
 .about__body-text-block {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
+
+  @media (min-width: 580px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .about-carousel-wrap {

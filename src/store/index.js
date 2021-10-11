@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import BrawLawsNavigation from "./modules/BrawLawsNavigation";
+import BrawLawsSidebar from "./modules/BrawLawsSidebar";
 import BrawLawsPageBack from "./modules/BrawLawsPageBack";
 import BrawLawsHeader from "./modules/BrawLawsHeader";
 import BrawLawsAbout from "./modules/BrawLawsAbout";
@@ -12,7 +12,7 @@ export default createStore({
   mutations: {},
   actions: {},
   modules: {
-    BrawLawsNavigation,
+    BrawLawsSidebar,
     BrawLawsPageBack,
     BrawLawsHeader,
     BrawLawsAbout,

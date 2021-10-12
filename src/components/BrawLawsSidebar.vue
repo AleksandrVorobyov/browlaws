@@ -82,6 +82,7 @@ export default {
 
 .sidebar-wrap {
   background: var(--bgsidebar);
+  z-index: 100;
   position: relative;
 }
 
@@ -144,13 +145,18 @@ export default {
   position: relative;
   padding: 15px 30px;
   color: var(--mainPincClr);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   background: rgb(0, 0, 0);
   text-decoration: none;
   font-family: var(--linkFont);
+
+  @media (min-width: 480px) {
+    letter-spacing: 2px;
+    font-size: 26px;
+  }
 
   &::before {
     position: absolute;
@@ -276,7 +282,7 @@ export default {
     height: 80px;
     background: var(--mainPincClr);
     border-radius: 50%;
-    z-index: -1;
+    z-index: 50;
     cursor: pointer;
     outline: none;
     border: none;

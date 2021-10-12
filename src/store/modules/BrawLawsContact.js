@@ -66,7 +66,6 @@ export default {
             document.querySelector(".contact__map-nav-btn.contact__map-nav-btn--active").classList.remove("contact__map-nav-btn--active");
             thisBtn.classList.add("contact__map-nav-btn--active");
             state.contact.map.contentActive = thisItem.content;
-
         }
     },
 };

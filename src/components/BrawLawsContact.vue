@@ -118,6 +118,5 @@ export default {
   font-weight: 400;
   color: #000;
   letter-spacing: 1px;
-  line-height: 1.3;
 }
 </style>

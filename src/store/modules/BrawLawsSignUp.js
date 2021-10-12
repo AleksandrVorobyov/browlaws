@@ -6,7 +6,7 @@ export default {
       social: [
         {
           src: "social/instagram.png",
-          href: "",
+          href: "https://www.instagram.com/browlaws/?utm_medium=copy_link",
           class: "sign-up__card--instagram",
         },
         {

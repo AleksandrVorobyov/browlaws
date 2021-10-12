@@ -13,12 +13,17 @@ export default {
   display: table;
   position: relative;
   margin: 0 auto;
-  font-size: 28px;
-  line-height: 1;
-  letter-spacing: 2px;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 1px;
   font-family: var(--linkFont);
   color: var(--mainPincClr);
   text-align: center;
+
+  @media (min-width: 480px) {
+    letter-spacing: 2px;
+    font-size: 28px;
+  }
 
   &::before {
     position: absolute;

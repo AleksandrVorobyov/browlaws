@@ -33,7 +33,7 @@ export default {
             class: "header__avatar-eyelashes",
           },
           {
-            href: "/manik",
+            href: "/nails",
             title: "Маникюр",
             src: "header/manik.jpg",
             class: "header__avatar-nails",

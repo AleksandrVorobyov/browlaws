@@ -12,62 +12,29 @@
           img(:src="require('@/assets/img/' + slide.src)")
 </template>
 <script>
-import Splide from "@splidejs/splide";
 export default {
   props: {
     slider: Object,
   },
-  components: {
-    Splide,
+  methods: {
+    aboutSlider() {
+      this.$store.commit("aboutSlider");
+    },
   },
-  beforeMount() {
-    document.addEventListener("DOMContentLoaded", function () {
-      var main = new Splide(".about-carousel", {
-        type: "fade",
-        cover: true,
-        rewind: true,
-        pagination: false,
-        heightRatio: 0.5,
-        breakpoints: {
-          0: {
-            height: 300,
-          },
-          480: {
-            height: 400,
-          },
-          720: {
-            height: 500,
-          },
-        },
-      });
-
-      var thumbnails = new Splide("#thumbnail-slider", {
-        fixedWidth: 100,
-        fixedHeight: 60,
-        arrows: false,
-        gap: 10,
-        rewind: true,
-        pagination: false,
-        cover: true,
-        isNavigation: true,
-        breakpoints: {
-          600: {
-            fixedWidth: 60,
-            fixedHeight: 44,
-          },
-        },
-      });
-
-      main.sync(thumbnails);
-      main.mount();
-      thumbnails.mount();
-    });
+  mounted() {
+    this.aboutSlider();
   },
 };
 </script>
 <style lang="scss">
-.about-carousel {
+.about-carousel,
+.about-carousel__thumb {
   position: relative;
+}
+
+.splide__arrows .splide__arrow {
+  overflow: hidden;
+  height: 33px;
 }
 
 #thumbnail-slider {
@@ -78,7 +45,11 @@ export default {
   fill: var(--mainPincClr);
 }
 
-.parts-thumbnail-slider .splide--nav > .splide__track > .splide__list > .splide__slide.is-active {
+.parts-thumbnail-slider
+  .splide--nav
+  > .splide__track
+  > .splide__list
+  > .splide__slide.is-active {
   border: 3px solid var(--mainPincClr);
 }
 </style>

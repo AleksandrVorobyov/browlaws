@@ -25,7 +25,11 @@ section#sidebar.sidebar
       h2.sidebar__social-title {{ sidebar.social.title }}
       ul.sidebar__social-list
         li.sidebar__social-list-item(v-for="item in sidebar.social.list")
-          a.sidebar__social-list-link(:href="item.href", :class="item.class")
+          a.sidebar__social-list-link(
+            :href="item.href",
+            target="_blank",
+            :class="item.class"
+          )
             img(:src="require('@/assets/img/' + item.src)")
             h4 {{ item.title }}
   button#sidebarBtn.sidebar__btn(@click="sidebarUnlock(), fixedPage()")
@@ -272,73 +276,82 @@ export default {
   color: #000;
 }
 
-@media (max-width: 1919px) {
+.sidebar__btn {
+  position: fixed;
+  display: block;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  background: var(--mainPincClr);
+  border-radius: 50%;
+  z-index: 50;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  opacity: 1;
+  transition: right 0s linear, z-index 0s linear 0s, transform 0s linear 0s;
+  box-shadow: 0px 0px 5px #000;
+
+  span {
+    pointer-events: none;
+  }
+}
+
+.sidebar__btn--active {
+  right: calc(100% - 40px);
+  z-index: 1000;
+  transform: translateY(-50%) rotate(180deg);
+  transition: right 0.5s ease-in-out, z-index 0s linear 0.5s,
+    transform 0s linear 0.5s;
+
+  @media (min-width: 480px) {
+    right: 360px;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+}
+
+.sidebar__btn::before {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 2px;
+  background: rgb(255, 255, 255);
+  content: "";
+  pointer-events: none;
+}
+
+.sidebar__btn::after {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 2px;
+  background: rgb(255, 255, 255);
+  content: "";
+  pointer-events: none;
+}
+
+.sidebar__btn span::before {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 2px;
+  background: rgb(255, 255, 255);
+  content: "";
+  pointer-events: none;
+}
+
+@media (min-width: 1920px) {
   .sidebar__btn {
-    position: fixed;
-    top: 50%;
-    right: -40px;
-    transform: translateY(-50%);
-    width: 80px;
-    height: 80px;
-    background: var(--mainPincClr);
-    border-radius: 50%;
-    z-index: 50;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    opacity: 1;
-    transition: right 0s linear, z-index 0s linear 0s, transform 0s linear 0s;
-    box-shadow: 0px 0px 5px #000;
-  }
-
-  .sidebar__btn--active {
-    right: calc(100% - 40px);
-    z-index: 1000;
-    transform: translateY(-50%) rotate(180deg);
-    transition: right 0.5s ease-in-out, z-index 0s linear 0.5s,
-      transform 0s linear 0.5s;
-
-    @media (min-width: 480px) {
-      right: 360px;
-      transform: translateY(-50%);
-      z-index: -1;
-    }
-  }
-
-  .sidebar__btn::before {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 30px;
-    width: 2px;
-    background: rgb(255, 255, 255);
-    content: "";
-    pointer-events: none;
-  }
-
-  .sidebar__btn::after {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 30px;
-    width: 2px;
-    background: rgb(255, 255, 255);
-    content: "";
-    pointer-events: none;
-  }
-
-  .sidebar__btn span::before {
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 30px;
-    width: 2px;
-    background: rgb(255, 255, 255);
-    content: "";
-    pointer-events: none;
+    display: none;
   }
 }
 </style>

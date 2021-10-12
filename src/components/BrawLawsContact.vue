@@ -86,6 +86,7 @@ export default {
   font-size: 14px;
   letter-spacing: 1px;
   color: #fff;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     padding: 10px 20px;

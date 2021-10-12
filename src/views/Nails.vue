@@ -1,5 +1,5 @@
 <template lang="pug">
-#eyelashesPage.eyelashes-page
+#nailsPage.nails-page
   braw-laws-page-back
   header
     braw-laws-sidebar

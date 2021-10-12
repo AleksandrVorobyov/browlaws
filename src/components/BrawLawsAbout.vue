@@ -6,7 +6,7 @@ section.about
     .about__body
       p.about__body-text {{ about.content.textOne }}
       .about-carousel-wrap
-        partsThumbnailSlider(:slider="about.carousel")
+        partsThumbnailSlider(:slider="about.carousel" :key="'ThumbnailSlider-' + componentKey")
       .about__body-text-block
         p.about__body-text(v-for="item in about.content.about") {{ item }}
     .about__title
@@ -23,7 +23,7 @@ import partsTitle from "./parts/parts-title.vue";
 import partsThumbnailSlider from "./parts/parts-thumbnail-slider.vue";
 export default {
   computed: {
-    ...mapGetters(["about"]),
+    ...mapGetters(["about", "componentKey"]),
   },
   components: {
     partsTitle,

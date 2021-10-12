@@ -19,7 +19,7 @@ export default {
           text: "Ламинирование ресниц",
         },
         {
-          href: "/manik",
+          href: "/nails",
           text: "Маникюр",
         },
       ],
@@ -32,7 +32,7 @@ export default {
         title: "Наши социальные сети",
         list: [
           {
-            href: "",
+            href: "https://www.instagram.com/browlaws/?utm_medium=copy_link",
             src: "social/instagram.png",
             title: "Наш instagram",
             class: "sidebar__social-instagram",
@@ -73,18 +73,20 @@ export default {
       sidebarBtn.classList.toggle("sidebar__btn--active")
     },
     fixedPage() {
-      const body = document.querySelector("body");
-      let scrollPosition = window.pageYOffset;
+      if (window.innerWidth < 1920) {
+        const body = document.querySelector("body");
+        let scrollPosition = window.pageYOffset;
 
-      if (!body.classList.contains('body--hidden')) {
-        body.classList.toggle("body--hidden");
-        body.style.top = '-' + scrollPosition + 'px';
-        document.body.setAttribute('data-body-scroll-fix', scrollPosition);
-      } else {
-        scrollPosition = document.body.getAttribute('data-body-scroll-fix');
-        document.body.removeAttribute('data-body-scroll-fix');
-        body.classList.toggle("body--hidden");
-        window.scroll(0, scrollPosition);
+        if (!body.classList.contains('body--hidden')) {
+          body.classList.toggle("body--hidden");
+          body.style.top = '-' + scrollPosition + 'px';
+          document.body.setAttribute('data-body-scroll-fix', scrollPosition);
+        } else {
+          scrollPosition = document.body.getAttribute('data-body-scroll-fix');
+          document.body.removeAttribute('data-body-scroll-fix');
+          body.classList.toggle("body--hidden");
+          window.scroll(0, scrollPosition);
+        }
       }
     }
   }

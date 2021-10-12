@@ -1,3 +1,4 @@
+import Splide from "@splidejs/splide";
 export default {
   state: {
     about: {
@@ -62,10 +63,69 @@ export default {
         },
       ],
     },
+    componentKey: 0
   },
   getters: {
     about(state) {
       return state.about;
     },
+    componentKey(state) {
+      return state.componentKey;
+    },
   },
+  mutations: {
+    componentKeyChange(state) {
+      state.componentKey++;
+      console.log(state.componentKey);
+    },
+    aboutSlider() {
+      document.addEventListener("DOMContentLoaded", function () {
+        var main = new Splide(".about-carousel", {
+          type: "fade",
+          heightRatio: 0.5,
+          pagination: false,
+          arrows: true,
+          cover: true,
+          height: 500,
+          breakpoints: {
+            0: {
+              height: 300,
+            },
+            480: {
+              height: 400,
+            },
+            720: {
+              height: 500,
+            },
+          },
+        });
+
+        var thumbnails = new Splide("#thumbnail-slider", {
+          rewind: true,
+          fixedWidth: 104,
+          fixedHeight: 58,
+          isNavigation: true,
+          arrows: false,
+          gap: 10,
+          focus: "center",
+          pagination: false,
+          cover: true,
+          dragMinThreshold: {
+            mouse: 4,
+            touch: 10,
+          },
+          breakpoints: {
+            600: {
+              fixedWidth: 60,
+              fixedHeight: 44,
+            },
+          },
+        });
+
+        main.sync(thumbnails);
+        main.mount();
+        thumbnails.mount();
+      });
+    }
+  }
 };

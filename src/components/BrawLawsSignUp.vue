@@ -10,6 +10,7 @@ section.sign-up
           :key="item",
           :href="item.href",
           :class="item.class"
+          target="_blank"
         )
           span 
             img(:src="require('@/assets/img/' + item.src)")

@@ -23,9 +23,9 @@ const routes = [
     component: () => import("../views/Eyelashes.vue"),
   },
   {
-    path: "/manik",
-    name: "Manik",
-    component: () => import("../views/Manik.vue"),
+    path: "/nails",
+    name: "Nails",
+    component: () => import("../views/Nails.vue"),
   },
 ];
 

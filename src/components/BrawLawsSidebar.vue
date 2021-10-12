@@ -12,7 +12,7 @@ section#sidebar.sidebar
     .sidebar__list
       ul.sidebar__list-wrap
         li.sidebar__list-item(v-for="list in sidebar.list")
-          router-link.sidebar__list-link(:to="list.href")
+          router-link.sidebar__list-link(:to="list.href" @click="fixedPage()")
             span {{ list.text }}
     .sidebar__contact
       h2.sidebar__social-title {{ sidebar.contact.title }}
@@ -55,7 +55,7 @@ export default {
   overflow-x: hidden;
   z-index: 2000;
   background: var(--bgsidebar);
-  transition: right 0.5s linear;
+  transition: right 0.5s ease-in-out;
 
   &::-webkit-scrollbar {
     width: 0px;
@@ -279,15 +279,21 @@ export default {
     outline: none;
     border: none;
     opacity: 1;
-    transition: right 0.5s linear, z-index 0s linear 0.5s,
-      box-shadow 0s linear 0.5s, transform 0s linear 0.5s;
+    transition: right 0s linear, z-index 0s linear 0s,
+      transform 0s linear 0s;
+    box-shadow: 0px 0px 5px #000;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .sidebar__btn--active {
     right: calc(100% - 40px);
     z-index: 1000;
     transform: translateY(-50%) rotate(180deg);
-    box-shadow: 0px 0px 5px #000;
+    transition: right 0.5s ease-in-out, z-index 0s linear 0.5s,
+      transform 0s linear 0.5s;
 
     @media (min-width: 480px) {
       right: 360px;

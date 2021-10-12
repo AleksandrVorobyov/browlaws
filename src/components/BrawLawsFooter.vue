@@ -37,6 +37,11 @@ export default {
     letter-spacing: 1px;
     font-family: var(--linkFont);
     margin: 0;
+    text-align: center;
+
+    @media (min-width: 480px) {
+      text-align: left;
+    }
   }
 }
 </style>

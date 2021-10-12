@@ -6,11 +6,12 @@
     braw-laws-sidebar
   main 
     .container.relative
-      BrawLawsAbout
-      BrawLawsSignUp
+      braw-laws-about
+      braw-laws-sign-up
+      braw-laws-contact
   footer
     .container.relative
-      BrawLawsFooter
+      braw-laws-footer
 </template>
 
 <script>
@@ -19,6 +20,7 @@ import BrawLawsHeader from "../components/BrawLawsHeader.vue";
 import BrawLawsSidebar from "../components/BrawLawsSidebar.vue";
 import BrawLawsAbout from "../components/BrawLawsAbout.vue";
 import BrawLawsSignUp from "../components/BrawLawsSignUp.vue";
+import BrawLawsContact from "../components/BrawLawsContact.vue";
 import BrawLawsFooter from "../components/BrawLawsFooter.vue";
 export default {
   name: "Home",
@@ -28,6 +30,7 @@ export default {
     BrawLawsSidebar,
     BrawLawsAbout,
     BrawLawsSignUp,
+    BrawLawsContact,
     BrawLawsFooter,
   },
 };

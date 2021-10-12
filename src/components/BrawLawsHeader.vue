@@ -31,7 +31,7 @@ export default {
 <style scoped lang="scss">
 .header {
   position: relative;
-  padding: 60px 0 100px;
+  padding: 40px 0 100px;
   min-height: 100vh;
   width: 100%;
   overflow: hidden;

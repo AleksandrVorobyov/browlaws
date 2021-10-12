@@ -4,6 +4,7 @@ import BrawLawsPageBack from "./modules/BrawLawsPageBack";
 import BrawLawsHeader from "./modules/BrawLawsHeader";
 import BrawLawsAbout from "./modules/BrawLawsAbout";
 import BrawLawsSignUp from "./modules/BrawLawsSignUp";
+import BrawLawsContact from "./modules/BrawLawsContact";
 import BrawLawsFooter from "./modules/BrawLawsFooter";
 
 export default createStore({
@@ -17,6 +18,7 @@ export default createStore({
     BrawLawsHeader,
     BrawLawsAbout,
     BrawLawsSignUp,
+    BrawLawsContact,
     BrawLawsFooter,
   },
 });

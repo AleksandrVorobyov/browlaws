@@ -12,17 +12,64 @@
           img(:src="require('@/assets/img/' + slide.src)")
 </template>
 <script>
+import Splide from "@splidejs/splide";
 export default {
   props: {
     slider: Object,
-  },
-  methods: {
-    aboutSlider() {
-      this.$store.commit("aboutSlider");
-    },
+    mainSlider: String,
+    paginationSlider: String,
   },
   mounted() {
-    this.aboutSlider();
+    const firstSlide = `.${this.mainSlider}`;
+    const secondSlide = `.${this.paginationSlider}`;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let main = new Splide(firstSlide, {
+        type: "fade",
+        heightRatio: 0.5,
+        pagination: false,
+        arrows: true,
+        cover: true,
+        height: 500,
+        breakpoints: {
+          0: {
+            height: 300,
+          },
+          480: {
+            height: 400,
+          },
+          720: {
+            height: 500,
+          },
+        },
+      });
+
+      let thumbnails = new Splide(secondSlide, {
+        rewind: true,
+        fixedWidth: 104,
+        fixedHeight: 58,
+        isNavigation: true,
+        arrows: false,
+        gap: 10,
+        focus: "center",
+        pagination: false,
+        cover: true,
+        dragMinThreshold: {
+          mouse: 4,
+          touch: 10,
+        },
+        breakpoints: {
+          600: {
+            fixedWidth: 60,
+            fixedHeight: 44,
+          },
+        },
+      });
+
+      main.sync(thumbnails);
+      main.mount();
+      thumbnails.mount();
+    });
   },
 };
 </script>

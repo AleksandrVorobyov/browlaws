@@ -1,7 +1,18 @@
 <template lang="pug">
 #page.page
   <router-view/>
+  braw-laws-sidebar
 </template>
+
+<script>
+import BrawLawsSidebar from "./components/BrawLawsSidebar.vue";
+export default {
+  name: "Home",
+  components: {
+    BrawLawsSidebar,
+  },
+};
+</script>
 
 <style lang="scss">
 :root {

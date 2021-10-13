@@ -3,7 +3,6 @@
   braw-laws-page-back
   header
     braw-laws-header
-    braw-laws-sidebar
   main 
     .container.relative
       braw-laws-about
@@ -17,7 +16,6 @@
 <script>
 import BrawLawsPageBack from "../components/BrawLawsPageBack.vue";
 import BrawLawsHeader from "../components/BrawLawsHeader.vue";
-import BrawLawsSidebar from "../components/BrawLawsSidebar.vue";
 import BrawLawsAbout from "../components/BrawLawsAbout.vue";
 import BrawLawsSignUp from "../components/BrawLawsSignUp.vue";
 import BrawLawsContact from "../components/BrawLawsContact.vue";
@@ -27,7 +25,6 @@ export default {
   components: {
     BrawLawsPageBack,
     BrawLawsHeader,
-    BrawLawsSidebar,
     BrawLawsAbout,
     BrawLawsSignUp,
     BrawLawsContact,

@@ -5,7 +5,7 @@ export default {
                 {
                     class: "product__img-block",
                     img: [
-                        "product/permanent/01.jpg",
+                        "product/permanent/flowers.jpg",
                         "product/permanent/02.jpg",
                     ],
                 },
@@ -37,7 +37,6 @@ export default {
                     class: "product__img-block",
                     img: [
                         "product/permanent/01.jpg",
-                        "product/permanent/02.jpg",
                     ],
                 },
                 {
@@ -60,15 +59,7 @@ export default {
                 {
                     class: "product__img-block",
                     img: [
-                        "product/permanent/01.jpg",
-                        "product/permanent/02.jpg",
-                    ],
-                },
-                {
-                    class: "product__img-block",
-                    img: [
-                        "product/permanent/01.jpg",
-                        "product/permanent/02.jpg",
+                        "product/permanent/ayes.jpg",
                     ],
                 },
                 {
@@ -79,7 +70,13 @@ export default {
                         'В какой-то степени техника напоминает известную всем татуировку. Только при татуировке пигмент вводится в глубокие слои кожи, а проколы для перманентного макияжа делаются на глубину 0,3.',
                     ]
                 },
-            ]
+                {
+                    class: "product__img-block",
+                    img: [
+                        "product/permanent/lips.jpg",
+                    ],
+                },
+            ],
         },
     },
     getters: {

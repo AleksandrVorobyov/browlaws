@@ -14,7 +14,7 @@ section#sidebar.sidebar
         li.sidebar__list-item(v-for="list in sidebar.list")
           router-link.sidebar__list-link(
             :to="list.href",
-            @click="fixedPage(), sidebarUnlock()"
+            @click="fixedPage(), sidebarUnlock(), updateCompanent()"
           )
             span {{ list.text }}
     .sidebar__contact
@@ -32,7 +32,10 @@ section#sidebar.sidebar
           )
             img(:src="require('@/assets/img/' + item.src)")
             h4 {{ item.title }}
-  button#sidebarBtn.sidebar__btn(@click="sidebarUnlock(), fixedPage()")
+  button#sidebarBtn.sidebar__btn(
+    @click="sidebarUnlock(), fixedPage()",
+    type="button"
+  )
     span
 </template>
 <script>
@@ -48,6 +51,9 @@ export default {
     fixedPage() {
       this.$store.commit("fixedPage");
     },
+    updateCompanent() {
+      this.$store.commit("updateCompanent");
+    },
   },
 };
 </script>
@@ -59,7 +65,6 @@ export default {
   width: 100%;
   height: 100vh;
   overflow-y: auto;
-  overflow-x: hidden;
   z-index: 2000;
   background: var(--bgsidebar);
   transition: right 0.5s ease-in-out;
@@ -87,6 +92,7 @@ export default {
 .sidebar-wrap {
   background: var(--bgsidebar);
   z-index: 100;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -132,9 +138,6 @@ export default {
   font-size: 32px;
   line-height: 1;
   letter-spacing: 1px;
-}
-
-.sidebar__list {
 }
 
 .sidebar__list-wrap {

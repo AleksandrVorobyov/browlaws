@@ -44,6 +44,7 @@ export default {
   grid-template-columns: 1fr;
   gap: 30px;
   padding: 0 30px;
+  align-items: center;
 
   @media (min-width: 768px) {
     padding: 0 50px;
@@ -52,7 +53,7 @@ export default {
   }
 }
 
-.product__img-block {
+.product__img-block:first-child {
   position: relative;
   width: 100%;
   height: 400px;
@@ -61,18 +62,70 @@ export default {
   @media (min-width: 768px) {
     height: 500px;
   }
+
+  .product__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+
+    @media (min-width: 768px) {
+      height: 500px;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .product__img:nth-child(odd) {
+    height: 200px;
+    top: 50%;
+    transform: translateY(-50%) skewX(-20deg);
+
+    @media (min-width: 768px) {
+      height: 300px;
+    }
+  }
+
+  .product__img:nth-child(even) {
+    border: 10px solid #fff;
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%) skewX(-20deg);
+  }
 }
 
-.product__img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.product__img-block {
+  position: relative;
   width: 100%;
   height: 400px;
 
-  @media (min-width: 768px) {
-    height: 500px;
+  &::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 20px;
+    content: "";
+    border: 3px solid var(--mainPincClr);
   }
+}
+
+.product__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
 
   img {
     position: absolute;
@@ -82,23 +135,6 @@ export default {
     height: 100%;
     object-fit: cover;
   }
-}
-
-.product__img:nth-child(odd) {
-  height: 200px;
-  top: 50%;
-  transform: translateY(-50%) skewX(-20deg);
-
-  @media (min-width: 768px) {
-    height: 300px;
-  }
-}
-
-.product__img:nth-child(even) {
-  border: 10px solid #fff;
-  width: 40%;
-  left: 50%;
-  transform: translateX(-50%) skewX(-20deg);
 }
 
 .product__info-title {

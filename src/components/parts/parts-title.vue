@@ -13,7 +13,7 @@ export default {
   display: table;
   position: relative;
   margin: 0 auto;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.3;
   letter-spacing: 1px;
   font-family: var(--linkFont);

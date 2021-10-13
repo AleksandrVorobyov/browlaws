@@ -55,7 +55,7 @@ export default {
         title: "Наши контакты",
         adress:
           "Адрес: Большой Кисельный переулок 14, стр 1, подъезд 2, кабинет 102",
-        map: `<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A039f756cbd17e3b7ffbe99a14593a677002c1401411e5db4bc0897a39e0755b6&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>`,
+        map: `<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Abe0e363c2de93bd3959e3c88d12b51f0ca3db7f36eb8c56a2995b00bdb3d80c3&amp;source=constructor" width="100%" height="390" frameborder="0"></iframe>`,
       },
     },
   },

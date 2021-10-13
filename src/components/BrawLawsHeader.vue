@@ -1,6 +1,6 @@
 <template lang="pug">
 section.header
-  .container
+  .container--max
     .header-wrap
       .header__avatar
         .header__avatar-main

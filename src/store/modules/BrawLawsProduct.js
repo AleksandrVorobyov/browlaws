@@ -1,11 +1,11 @@
 export default {
     state: {
         product: {
-            col: [
+            permanent: [
                 {
                     class: "product__img-block",
                     img: [
-                        "product/permanent/flowers.jpg",
+                        "product/permanent/prod.jpg",
                         "product/permanent/02.jpg",
                     ],
                 },

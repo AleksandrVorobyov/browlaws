@@ -46,6 +46,18 @@ export default {
 .container {
   width: 100%;
   height: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media (min-width: 1920px) {
+    max-width: 1440px;
+  }
+}
+
+.container--max {
+  width: 100%;
+  height: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 15px;

@@ -11,15 +11,7 @@ import BrawLawsFooter from "./modules/BrawLawsFooter";
 export default createStore({
   state: {},
   getters: {},
-  mutations: {
-    updateCompanent() {
-      const about = document.querySelector(".about");
-      if (about) {
-        about.$forceUpdate();
-        console.log("fire!");
-      }
-    }
-  },
+  mutations: {},
   actions: {},
   modules: {
     BrawLawsSidebar,

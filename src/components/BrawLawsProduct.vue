@@ -2,7 +2,7 @@
 section.product
   .container
     .product-wrap
-      div(v-for="item in product.col", :key="item", :class="item.class")
+      div(v-for="item in productItem", :key="item", :class="item.class")
         .product__img(v-if="item.img", v-for="itemImg in item.img")
           img(:src="require('@/assets/img/' + itemImg)")
         .product__info-title(v-if="item.title")
@@ -12,10 +12,10 @@ section.product
 </template>
 <script>
 import partsTitle from "./parts/parts-title.vue";
-import { mapGetters } from "vuex";
 export default {
-  computed: {
-    ...mapGetters(["product"]),
+
+  props: {
+    productItem: Array
   },
   components: {
     partsTitle,
@@ -43,8 +43,11 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  padding: 0 30px;
   align-items: center;
+
+  @media (min-width: 480px) {
+    padding: 0 30px;
+  }
 
   @media (min-width: 768px) {
     padding: 0 50px;
@@ -55,9 +58,15 @@ export default {
 
 .product__img-block:first-child {
   position: relative;
-  width: 100%;
+  width: calc(100% - 60px);
+  margin: 0 auto;
   height: 400px;
   align-items: center;
+
+  @media (min-width: 480px) {
+    margin: 0;
+    width: 100%;
+  }
 
   @media (min-width: 768px) {
     height: 500px;
@@ -68,10 +77,10 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 400px;
+    height: 350px;
 
     @media (min-width: 768px) {
-      height: 500px;
+      height: 450px;
     }
 
     img {
@@ -81,6 +90,7 @@ export default {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      pointer-events: none;
     }
   }
 
@@ -97,8 +107,9 @@ export default {
   .product__img:nth-child(even) {
     border: 10px solid #fff;
     width: 40%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%) skewX(-20deg);
+    transform: translate(-50%, -50%) skewX(-20deg);
   }
 }
 
@@ -134,6 +145,7 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
   }
 }
 

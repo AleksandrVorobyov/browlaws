@@ -3,7 +3,7 @@
   braw-laws-page-back
   header
     .container.relative
-      braw-laws-product
+      braw-laws-product(:productItem="product.permanent")
   main 
     .container.relative
       braw-laws-sign-up
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import BrawLawsProduct from "../components/BrawLawsProduct.vue";
 import BrawLawsPageBack from "../components/BrawLawsPageBack.vue";
 import BrawLawsSignUp from "../components/BrawLawsSignUp.vue";
@@ -27,6 +28,9 @@ export default {
     BrawLawsSignUp,
     BrawLawsContact,
     BrawLawsFooter,
+  },
+  computed: {
+    ...mapGetters(["product"]),
   },
 };
 </script>

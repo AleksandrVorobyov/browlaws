@@ -14,7 +14,7 @@ section#sidebar.sidebar
         li.sidebar__list-item(v-for="list in sidebar.list")
           router-link.sidebar__list-link(
             :to="list.href",
-            @click="fixedPage(), sidebarUnlock(), updateCompanent()"
+            @click="fixedPage(), sidebarUnlock()"
           )
             span {{ list.text }}
     .sidebar__contact
@@ -51,9 +51,6 @@ export default {
     fixedPage() {
       this.$store.commit("fixedPage");
     },
-    updateCompanent() {
-      this.$store.commit("updateCompanent");
-    },
   },
 };
 </script>
@@ -64,7 +61,7 @@ export default {
   right: -100%;
   width: 100%;
   height: 100vh;
-  overflow-y: auto;
+  overflow: visible;
   z-index: 2000;
   background: var(--bgsidebar);
   transition: right 0.5s ease-in-out;
@@ -296,6 +293,7 @@ export default {
   opacity: 1;
   transition: right 0s linear, z-index 0s linear 0s, transform 0s linear 0s;
   box-shadow: 0px 0px 5px #000;
+  visibility: visible;
 
   span {
     pointer-events: none;

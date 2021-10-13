@@ -115,7 +115,7 @@ export default {
     margin-top: 20px;
   }
 
-  #sidebar {
+  #sidebar, #pageBack {
     margin-top: 0;
   }
 }

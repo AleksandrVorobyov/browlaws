@@ -64,8 +64,7 @@ export default {
   right: -100%;
   width: 100%;
   height: 100vh;
-  overflow: visible;
-  overflow-y: scroll;
+  overflow: auto;
   z-index: 2000;
   background: var(--bgsidebar);
   transition: right 0.5s ease-in-out;
@@ -73,6 +72,11 @@ export default {
   &::-webkit-scrollbar {
     width: 0px;
     background: transparent;
+  }
+
+  ::-webkit-resizer {
+    width: 0px;
+    height: 0px;
   }
 
   @media (min-width: 480px) {

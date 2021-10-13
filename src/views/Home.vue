@@ -21,7 +21,7 @@ import BrawLawsSignUp from "../components/BrawLawsSignUp.vue";
 import BrawLawsContact from "../components/BrawLawsContact.vue";
 import BrawLawsFooter from "../components/BrawLawsFooter.vue";
 export default {
-  name: "Home",
+  name: "homePage",
   components: {
     BrawLawsPageBack,
     BrawLawsHeader,

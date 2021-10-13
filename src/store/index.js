@@ -11,7 +11,11 @@ import BrawLawsFooter from "./modules/BrawLawsFooter";
 export default createStore({
   state: {},
   getters: {},
-  mutations: {},
+  mutations: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  },
   actions: {},
   modules: {
     BrawLawsSidebar,

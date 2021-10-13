@@ -9,7 +9,8 @@ section.header
         router-link(
           v-for="item in header.avatar.list",
           :to="item.href",
-          :class="item.class"
+          :class="item.class",
+          @click="scrollToTop()"
         )
           span.header__avatar-img
             img(:src="require('@/assets/img/' + item.src)")
@@ -25,6 +26,11 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters(["header"]),
+  },
+  methods: {
+    scrollToTop() {
+      this.$store.commit("scrollToTop");
+    },
   },
 };
 </script>

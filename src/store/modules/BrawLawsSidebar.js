@@ -19,8 +19,8 @@ export default {
           text: "Ламинирование ресниц",
         },
         {
-          href: "/nails",
-          text: "Маникюр",
+          href: "/eyelEextensions",
+          text: "Наращивание ресниц",
         },
       ],
       logo: {

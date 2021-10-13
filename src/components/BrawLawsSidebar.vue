@@ -14,7 +14,7 @@ section#sidebar.sidebar
         li.sidebar__list-item(v-for="list in sidebar.list")
           router-link.sidebar__list-link(
             :to="list.href",
-            @click="fixedPage(), sidebarUnlock()"
+            @click="fixedPage(), sidebarUnlock(), scrollToTop()"
           )
             span {{ list.text }}
     .sidebar__contact
@@ -51,6 +51,9 @@ export default {
     fixedPage() {
       this.$store.commit("fixedPage");
     },
+    scrollToTop() {
+      this.$store.commit("scrollToTop");
+    },
   },
 };
 </script>
@@ -62,6 +65,7 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: visible;
+  overflow-y: scroll;
   z-index: 2000;
   background: var(--bgsidebar);
   transition: right 0.5s ease-in-out;

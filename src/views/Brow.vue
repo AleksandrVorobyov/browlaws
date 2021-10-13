@@ -2,6 +2,8 @@
 #browPage.brow-page
   braw-laws-page-back
   header
+    .container.relative
+      braw-laws-product(:productItem="product.brow")
   main 
     .container.relative
       braw-laws-sign-up
@@ -12,17 +14,23 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import BrawLawsPageBack from "../components/BrawLawsPageBack.vue";
+import BrawLawsProduct from "../components/BrawLawsProduct.vue";
 import BrawLawsSignUp from "../components/BrawLawsSignUp.vue";
 import BrawLawsContact from "../components/BrawLawsContact.vue";
 import BrawLawsFooter from "../components/BrawLawsFooter.vue";
 export default {
-  name: "Home",
+  name: "browPage",
   components: {
     BrawLawsPageBack,
+    BrawLawsProduct,
     BrawLawsSignUp,
     BrawLawsContact,
     BrawLawsFooter,
+  },
+  computed: {
+    ...mapGetters(["product"]),
   },
 };
 </script>

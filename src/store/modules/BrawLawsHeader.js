@@ -33,9 +33,9 @@ export default {
             class: "header__avatar-eyelashes",
           },
           {
-            href: "/nails",
-            title: "Маникюр",
-            src: "header/manik.jpg",
+            href: "/eyelEextensions",
+            title: "Наращивание ресниц",
+            src: "product/eyel-extensions/03.jpg",
             class: "header__avatar-nails",
           },
         ],

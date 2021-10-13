@@ -64,7 +64,7 @@ export default {
   right: -100%;
   width: 100%;
   height: 100vh;
-  overflow: auto;
+  overflow: visible;
   z-index: 2000;
   background: var(--bgsidebar);
   transition: right 0.5s ease-in-out;
@@ -74,7 +74,7 @@ export default {
     background: transparent;
   }
 
-  ::-webkit-resizer {
+  &::-webkit-resizer {
     width: 0px;
     height: 0px;
   }
@@ -97,8 +97,20 @@ export default {
 .sidebar-wrap {
   background: var(--bgsidebar);
   z-index: 100;
+  overflow-y: auto;
   overflow-x: hidden;
   position: relative;
+  height: 100%;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  &::-webkit-resizer {
+    width: 0px;
+    height: 0px;
+  }
 }
 
 .sidebar__logo {

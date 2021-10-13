@@ -1,15 +1,32 @@
 <template lang="pug">
 #page.page
-  <router-view/>
-  braw-laws-sidebar
+  header
+    braw-laws-page-back
+    braw-laws-sidebar
+  main
+    <router-view/>
+    .container.relative
+      braw-laws-sign-up
+      braw-laws-contact
+  footer
+    .container.relative
+      braw-laws-footer
 </template>
 
 <script>
+import BrawLawsPageBack from "./components/BrawLawsPageBack.vue";
 import BrawLawsSidebar from "./components/BrawLawsSidebar.vue";
+import BrawLawsSignUp from "./components/BrawLawsSignUp.vue";
+import BrawLawsContact from "./components/BrawLawsContact.vue";
+import BrawLawsFooter from "./components/BrawLawsFooter.vue";
 export default {
   name: "Home",
   components: {
+    BrawLawsPageBack,
     BrawLawsSidebar,
+    BrawLawsSignUp,
+    BrawLawsContact,
+    BrawLawsFooter,
   },
 };
 </script>
@@ -91,6 +108,16 @@ export default {
 
 .relative {
   position: relative;
+}
+
+.page {
+  section {
+    margin-top: 20px;
+  }
+
+  #sidebar {
+    margin-top: 0;
+  }
 }
 
 .body--hidden {

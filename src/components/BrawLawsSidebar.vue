@@ -203,11 +203,15 @@ export default {
     top: 0%;
     width: 100%;
     height: 100%;
-    background: var(--mainPincClr);
+    background: rgba(215, 26, 117, 0.5);
     content: "";
     z-index: 5;
     box-shadow: 0px 0px 10px #0003;
     transition: all 0.4s ease-in-out;
+
+    @media (min-width: 480px) {
+      background: var(--mainPincClr);
+    }
   }
 
   &:hover {

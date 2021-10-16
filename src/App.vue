@@ -169,6 +169,7 @@ export default {
   @media (min-width: 480px) {
     width: 100px !important;
     height: 100px !important;
+    display: block;
   }
 
   .yButtonText {

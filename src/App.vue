@@ -1,32 +1,54 @@
 <template lang="pug">
 #page.page
   header
-    braw-laws-page-back
-    braw-laws-sidebar
+    brow-laws-page-back
+    brow-laws-sidebar
   main
     <router-view/>
     .container.relative
-      braw-laws-sign-up
-      braw-laws-contact
+      brow-laws-sign-up
+      brow-laws-contact
   footer
     .container.relative
-      braw-laws-footer
+      brow-laws-footer
 </template>
 
 <script>
-import BrawLawsPageBack from "./components/BrawLawsPageBack.vue";
-import BrawLawsSidebar from "./components/BrawLawsSidebar.vue";
-import BrawLawsSignUp from "./components/BrawLawsSignUp.vue";
-import BrawLawsContact from "./components/BrawLawsContact.vue";
-import BrawLawsFooter from "./components/BrawLawsFooter.vue";
+import BrowLawsPageBack from "./components/BrowLawsPageBack.vue";
+import BrowLawsSidebar from "./components/BrowLawsSidebar.vue";
+import BrowLawsSignUp from "./components/BrowLawsSignUp.vue";
+import BrowLawsContact from "./components/BrowLawsContact.vue";
+import BrowLawsFooter from "./components/BrowLawsFooter.vue";
 export default {
   name: "Home",
   components: {
-    BrawLawsPageBack,
-    BrawLawsSidebar,
-    BrawLawsSignUp,
-    BrawLawsContact,
-    BrawLawsFooter,
+    BrowLawsPageBack,
+    BrowLawsSidebar,
+    BrowLawsSignUp,
+    BrowLawsContact,
+    BrowLawsFooter,
+  },
+  mounted() {
+    let recaptchaScript = document.createElement("script");
+    recaptchaScript.setAttribute(
+      "src",
+      "https://w606855.yclients.com/widgetJS"
+    );
+    document.head.appendChild(recaptchaScript);
+    this.thumbnailSlider();
+  },
+  methods: {
+    thumbnailSlider() {
+      this.$store.commit("thumbnailSlider");
+    },
+  },
+  watch: {
+    $route(to, from) {
+      if (to.fullPath === "/") {
+        console.log("fire!");
+        this.thumbnailSlider();
+      }
+    },
   },
 };
 </script>
@@ -115,7 +137,8 @@ export default {
     margin-top: 20px;
   }
 
-  #sidebar, #pageBack {
+  #sidebar,
+  #pageBack {
     margin-top: 0;
   }
 }
@@ -125,6 +148,65 @@ export default {
   overflow: hidden;
   left: 0;
   width: 100%;
+}
+
+.yButtonBackground {
+  background: var(--mainPincClr) !important;
+}
+
+.yButtonWave {
+  color: var(--mainPincClr) !important;
+}
+
+.yButton.bottom.right {
+  left: 50px !important;
+  bottom: 50px !important;
+  display: flex;
+  align-items: center;
+  width: 70px !important;
+  height: 70px !important;
+
+  @media (min-width: 480px) {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .yButtonText {
+    color: #fff !important;
+  }
+
+  .yButtonBackground {
+    width: 70px !important;
+    height: 70px !important;
+    z-index: -1;
+    @media (min-width: 480px) {
+      width: 100px !important;
+      height: 100px !important;
+    }
+  }
+
+  .yButtonText {
+    position: relative !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    letter-spacing: 0.5px !important;
+    z-index: 5;
+    top: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    @media (min-width: 480px) {
+      width: 90px !important;
+      height: 50px !important;
+      font-size: 15px !important;
+      line-height: 25px !important;
+      letter-spacing: 1.5px !important;
+      top: 25px !important;
+      left: 5px !important;
+      right: 5px !important;
+    }
+  }
 }
 </style>
 

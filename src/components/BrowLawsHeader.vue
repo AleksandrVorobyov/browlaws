@@ -42,6 +42,8 @@ export default {
   width: 100%;
   overflow: hidden;
   z-index: 500;
+  display: flex;
+  align-items: center;
 
   @media (min-width: 480px) {
     padding: 100px 0;

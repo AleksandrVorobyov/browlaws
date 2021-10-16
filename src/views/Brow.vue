@@ -1,17 +1,17 @@
 <template lang="pug">
 #browPage.brow-page
   .container.relative
-    braw-laws-product(:productItem="product.brow")
+    brow-laws-product(:productItem="product.brow")
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import BrawLawsProduct from "../components/BrawLawsProduct.vue";
+import BrowLawsProduct from "../components/BrowLawsProduct.vue";
 
 export default {
   name: "browPage",
   components: {
-    BrawLawsProduct,
+    BrowLawsProduct,
   },
   computed: {
     ...mapGetters(["product"]),

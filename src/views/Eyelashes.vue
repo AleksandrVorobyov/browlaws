@@ -1,16 +1,16 @@
 <template lang="pug">
 #eyelashesPage.eyelashes-page
   .container.relative
-    braw-laws-product(:productItem="product.eyel")
+    brow-laws-product(:productItem="product.eyel")
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import BrawLawsProduct from "../components/BrawLawsProduct.vue";
+import BrowLawsProduct from "../components/BrowLawsProduct.vue";
 export default {
   name: "eyelashesPage",
   components: {
-    BrawLawsProduct,
+    BrowLawsProduct,
   },
   computed: {
     ...mapGetters(["product"]),

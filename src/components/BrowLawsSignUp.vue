@@ -4,12 +4,14 @@ section.sign-up
     .sign-up-wrap
       .sign-up__title
         parts-title(:text="signUp.title")
+      .sign-up__subtitle
+        h5.sign-up__subtitle-text Вы можете записаться через нашу онлайн форму или написать нам в один из мессенджеров!
       .sign-up__cards
         a.sign-up__card(
           v-for="item in signUp.social",
           :key="item",
           :href="item.href",
-          :class="item.class"
+          :class="item.class",
           target="_blank"
         )
           span 
@@ -46,8 +48,20 @@ export default {
   position: relative;
 }
 
-.sign-up__title {
+.sign-up__title,
+.sign-up__subtitle {
   margin-bottom: 30px;
+}
+
+.sign-up__subtitle-text {
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: 1px;
+  color: var(--mainPincClr);
+}
+
+.sign-up__subtitle {
+  display: block;
 }
 
 .sign-up__cards {

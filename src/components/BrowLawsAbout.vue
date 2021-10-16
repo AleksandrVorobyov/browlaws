@@ -6,7 +6,11 @@ section.about
     .about__body
       p.about__body-text {{ about.content.textOne }}
       .about-carousel-wrap
-        partsThumbnailSlider(:slider="about.carousel" :mainSlider="about.mainSlider" :paginationSlider="about.paginationSlider" :key="'ThumbnailSlider-' + componentKey")
+        partsThumbnailSlider(
+          :slider="about.carousel",
+          :mainSlider="about.mainSlider",
+          :paginationSlider="about.paginationSlider",
+        )
       .about__body-text-block
         p.about__body-text(v-for="item in about.content.about") {{ item }}
     .about__title

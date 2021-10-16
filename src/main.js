@@ -5,7 +5,6 @@ import store from "./store";
 import "./assets/css/bootstrap-reboot.min.css";
 import "./assets/css/fonts.css";
 import "@splidejs/splide/dist/css/themes/splide-sea-green.min.css";
-
 createApp(App)
   .use(store)
   .use(router)

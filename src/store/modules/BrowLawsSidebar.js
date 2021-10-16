@@ -32,7 +32,7 @@ export default {
         title: "Наши социальные сети",
         list: [
           {
-            href: "https://www.instagram.com/browlaws/?utm_medium=copy_link",
+            href: "https://www.instagram.com/Brow&Laws/?utm_medium=copy_link",
             src: "social/instagram.png",
             title: "Наш instagram",
             class: "sidebar__social-instagram",

@@ -1,16 +1,16 @@
 <template lang="pug">
 #permanentPage.permanent-page
   .container.relative
-    braw-laws-product(:productItem="product.permanent")
+    brow-laws-product(:productItem="product.permanent")
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import BrawLawsProduct from "../components/BrawLawsProduct.vue";
+import BrowLawsProduct from "../components/BrowLawsProduct.vue";
 export default {
   name: "permanentPage",
   components: {
-    BrawLawsProduct,
+    BrowLawsProduct,
   },
   computed: {
     ...mapGetters(["product"]),

@@ -35,20 +35,6 @@ export default {
       "https://w606855.yclients.com/widgetJS"
     );
     document.head.appendChild(recaptchaScript);
-    this.thumbnailSlider();
-  },
-  methods: {
-    thumbnailSlider() {
-      this.$store.commit("thumbnailSlider");
-    },
-  },
-  watch: {
-    $route(to, from) {
-      if (to.fullPath === "/") {
-        console.log("fire!");
-        this.thumbnailSlider();
-      }
-    },
   },
 };
 </script>

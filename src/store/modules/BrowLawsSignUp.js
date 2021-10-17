@@ -16,7 +16,7 @@ export default {
         },
         {
           src: "social/whatsapp.png",
-          href: "",
+          href: "https://api.whatsapp.com/send/?phone=89256645463",
           class: "sign-up__card--whatsapp",
         },
       ],

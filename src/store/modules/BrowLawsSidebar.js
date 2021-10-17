@@ -38,13 +38,13 @@ export default {
             class: "sidebar__social-instagram",
           },
           {
-            href: "",
+            href: "https://telegram.im/@Voojaxx",
             src: "social/telegram.png",
             title: "Наш telegram",
             class: "sidebar__social-telegram",
           },
           {
-            href: "",
+            href: "https://api.whatsapp.com/send/?phone=89256645463",
             src: "social/whatsapp.png",
             title: "Наш whatsapp",
             class: "sidebar__social-whatsapp",

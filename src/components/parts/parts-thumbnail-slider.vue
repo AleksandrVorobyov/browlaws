@@ -1,49 +1,50 @@
 <template lang="pug">
 .parts-thumbnail-slider
-  div(
-    v-for="(item, idx) in slider",
-    :key="item + idx",
-    :class="item.class",
-    :id="item.id"
+  Splide(
+    :class="slider.class",
+    :id="slider.id",
+    :options="slider.options",
+    ref="main"
   )
-    .splide__track
-      ul.splide__list
-        li.splide__slide(v-for="slide in item.slide", :key="slide")
-          img(:src="require('@/assets/img/' + slide.src)")
+    SplideSlide(v-for="slide in slider.slide", :key="slide")
+      img(:src="require('@/assets/img/' + slide.src)")
 </template>
 <script>
-export default {
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import { defineComponent, onMounted, ref } from "vue";
+export default defineComponent({
   props: {
     slider: Object,
-    mainSlider: String,
-    paginationSlider: String,
   },
-};
+  components: {
+    Splide,
+    SplideSlide,
+  },
+});
 </script>
 <style lang="scss">
-.about-carousel,
-.about-carousel__thumb {
+.splide.about-carousel {
   position: relative;
+  padding: 0em;
+
+  @media (min-width: 768px) {
+    padding: 0 3em;
+  }
 }
 
-.splide__arrows .splide__arrow {
-  overflow: hidden;
-  height: 33px;
+.splide.about-carousel .splide__pagination__page.is-active {
+  background: var(--mainPincClr);
 }
 
-#thumbnail-slider {
-  margin-top: 10px;
+.splide.about-carousel .splide__pagination__page:hover {
+  background: #a10b54;
 }
 
-.parts-thumbnail-slider .splide__arrow svg {
+.splide.about-carousel .splide__arrows .splide__arrow svg {
   fill: var(--mainPincClr);
 }
 
-.parts-thumbnail-slider
-  .splide--nav
-  > .splide__track
-  > .splide__list
-  > .splide__slide.is-active {
-  border: 3px solid var(--mainPincClr);
+.splide.about-carousel .splide__arrows .splide__arrow:hover svg {
+  fill: #a10b54;
 }
 </style>

@@ -15,52 +15,48 @@ export default {
           "В «Brow&Laws» работают настоящие мастера своего дела, обладающие большим опытом и владеющие самыми актуальными техниками и технологиями, способными сделать вашу внешность прекрасной. Стремление к непрерывному совершенствованию всей творческой команды салона, регулярное обучение в лучших школах beauty-индустрии и индивидуальный подход к каждому клиенту помогают нам создавать образы, сочетающие в себе моду и красоту. Красивый и стильный интерьер, доброжелательную тёплую атмосферу и великолепный сервис успели оценить наши клиенты.",
         ],
       },
-      carousel: [
-        {
-          slide: [
-            {
-              src: "about/01.jpg",
+      carousel:
+      {
+        slide: [
+          {
+            src: "about/01.jpg",
+          },
+          {
+            src: "about/02.jpg",
+          },
+          {
+            src: "about/03.jpg",
+          },
+          {
+            src: "about/04.jpg",
+          },
+          {
+            src: "about/05.jpg",
+          },
+        ],
+        class: "about-carousel",
+        id: "about-carousel",
+        options: {
+          type: "fade",
+          heightRatio: 0.5,
+          pagination: true,
+          arrows: true,
+          cover: true,
+          height: 500,
+          rewind: true,
+          breakpoints: {
+            0: {
+              height: 300,
             },
-            {
-              src: "about/02.jpg",
+            480: {
+              height: 400,
             },
-            {
-              src: "about/03.jpg",
+            720: {
+              height: 500,
             },
-            {
-              src: "about/04.jpg",
-            },
-            {
-              src: "about/05.jpg",
-            },
-          ],
-          class: "about-carousel",
-          id: "about-carousel",
+          },
         },
-        {
-          slide: [
-            {
-              src: "about/01.jpg",
-            },
-            {
-              src: "about/02.jpg",
-            },
-            {
-              src: "about/03.jpg",
-            },
-            {
-              src: "about/04.jpg",
-            },
-            {
-              src: "about/05.jpg",
-            },
-          ],
-          class: "about-carousel__thumb",
-          id: "thumbnail-slider",
-        },
-      ],
-      mainSlider: "about-carousel",
-      paginationSlider: "about-carousel__thumb",
+      },
     },
     componentKey: 0
   },

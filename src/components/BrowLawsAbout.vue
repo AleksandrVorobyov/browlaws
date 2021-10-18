@@ -36,7 +36,7 @@ export default {
 <style scoped lang="scss">
 .about {
   position: relative;
-  padding: 50px 20px;
+  padding: 50px 15px;
   width: 100%;
   overflow: hidden;
   z-index: 500;

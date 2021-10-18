@@ -69,7 +69,6 @@ export default {
   grid-template-columns: 1fr;
   gap: 20px;
   grid-template-rows: 150px 150px 150px;
-  padding: 0 20px;
 
   @media (min-width: 580px) {
     perspective: 1000px;
@@ -79,6 +78,7 @@ export default {
   }
 
   @media (min-width: 769px) {
+    padding: 0 20px;
     gap: 40px;
   }
 

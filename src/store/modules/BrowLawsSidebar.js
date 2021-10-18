@@ -32,19 +32,19 @@ export default {
         title: "Наши социальные сети",
         list: [
           {
-            href: "https://www.instagram.com/Brow&Laws/?utm_medium=copy_link",
+            href: "https://www.instagram.com/browlaws/",
             src: "social/instagram.png",
             title: "Наш instagram",
             class: "sidebar__social-instagram",
           },
           {
-            href: "https://telegram.im/@Voojaxx",
+            href: "https://telegram.im/@liziliska",
             src: "social/telegram.png",
             title: "Наш telegram",
             class: "sidebar__social-telegram",
           },
           {
-            href: "https://api.whatsapp.com/send/?phone=89256645463",
+            href: "https://wa.me/79256645463",
             src: "social/whatsapp.png",
             title: "Наш whatsapp",
             class: "sidebar__social-whatsapp",

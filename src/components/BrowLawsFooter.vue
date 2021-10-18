@@ -10,6 +10,16 @@ export default {
   computed: {
     ...mapGetters(["footer"]),
   },
+  methods: {
+    footerSectionAnim() {
+      this.$store.commit("footerSectionAnim");
+    },
+  },
+  mounted() {
+    if (window.innerWidth > 768) {
+      this.footerSectionAnim();
+    }
+  },
 };
 </script>
 <style scoped lang="scss">

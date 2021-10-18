@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
   state: {
     header: {
@@ -47,4 +49,23 @@ export default {
       return state.header;
     },
   },
+  mutations: {
+    headerSectionAnim() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      let headerItems = document.querySelectorAll('.header-wrap > *')
+
+      headerItems.forEach((item) => {
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            toggleActions: "restart pause play pause",
+          },
+          opacity: 0,
+          y: 60,
+          duration: 1.5,
+        });
+      })
+    }
+  }
 };

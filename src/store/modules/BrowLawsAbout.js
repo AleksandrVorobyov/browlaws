@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
   state: {
     about: {
@@ -58,20 +60,29 @@ export default {
         },
       },
     },
-    componentKey: 0
   },
   getters: {
     about(state) {
       return state.about;
     },
-    componentKey(state) {
-      return state.componentKey;
-    },
   },
   mutations: {
-    componentKeyChange(state) {
-      state.componentKey++;
-      console.log(state.componentKey);
-    },
+    aboutSectionAnim() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      let aboutItems = document.querySelectorAll('.about-wrap > *')
+
+      aboutItems.forEach((item) => {
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            toggleActions: "restart pause play pause",
+          },
+          opacity: 0,
+          y: 30,
+          duration: .7,
+        });
+      })
+    }
   }
 };

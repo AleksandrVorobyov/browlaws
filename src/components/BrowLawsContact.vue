@@ -32,6 +32,14 @@ export default {
     contactMapNav(event) {
       this.$store.commit("contactMapNav", event.target);
     },
+    contactSectionAnim() {
+      this.$store.commit("contactSectionAnim");
+    },
+  },
+  mounted() {
+    if (window.innerWidth > 768) {
+      this.contactSectionAnim();
+    }
   },
 };
 </script>

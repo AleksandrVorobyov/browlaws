@@ -1,5 +1,5 @@
 <template lang="pug">
-section.sign-up
+section#sign-up.sign-up
   .container
     .sign-up-wrap
       .sign-up__title
@@ -26,6 +26,16 @@ export default {
   },
   components: {
     partsTitle,
+  },
+  methods: {
+    signUpSectionAnim() {
+      this.$store.commit("signUpSectionAnim");
+    },
+  },
+  mounted() {
+    if (window.innerWidth > 768) {
+      this.signUpSectionAnim();
+    }
   },
 };
 </script>

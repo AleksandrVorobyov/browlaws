@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
     state: {
         contact: {
@@ -66,6 +68,22 @@ export default {
             document.querySelector(".contact__map-nav-btn.contact__map-nav-btn--active").classList.remove("contact__map-nav-btn--active");
             thisBtn.classList.add("contact__map-nav-btn--active");
             state.contact.map.contentActive = thisItem.content;
+        },
+        contactSectionAnim() {
+            gsap.registerPlugin(ScrollTrigger);
+            let contactItems = document.querySelectorAll('.contact-wrap > *')
+
+            contactItems.forEach((item) => {
+                gsap.from(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        toggleActions: "restart pause play pause",
+                    },
+                    opacity: 0,
+                    y: 30,
+                    duration: .7,
+                });
+            })
         }
     },
 };

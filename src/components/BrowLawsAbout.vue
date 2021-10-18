@@ -1,14 +1,12 @@
 <template lang="pug">
-section.about
+section#about.about
   .about-wrap
     .about__title
       parts-title(:text="about.title")
     .about__body
       p.about__body-text {{ about.content.textOne }}
       .about-carousel-wrap
-        partsThumbnailSlider(
-          :slider="about.carousel",
-        )
+        partsThumbnailSlider(:slider="about.carousel")
       .about__body-text-block
         p.about__body-text(v-for="item in about.content.about") {{ item }}
     .about__title
@@ -25,11 +23,21 @@ import partsTitle from "./parts/parts-title.vue";
 import partsThumbnailSlider from "./parts/parts-thumbnail-slider.vue";
 export default {
   computed: {
-    ...mapGetters(["about", "componentKey"]),
+    ...mapGetters(["about"]),
   },
   components: {
     partsTitle,
     partsThumbnailSlider,
+  },
+  methods: {
+    aboutSectionAnim() {
+      this.$store.commit("aboutSectionAnim");
+    },
+  },
+  mounted() {
+    if (window.innerWidth > 768) {
+      this.aboutSectionAnim();
+    }
   },
 };
 </script>

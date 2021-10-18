@@ -31,6 +31,14 @@ export default {
     scrollToTop() {
       this.$store.commit("scrollToTop");
     },
+    headerSectionAnim() {
+      this.$store.commit("headerSectionAnim");
+    },
+  },
+  mounted() {
+    if (window.innerWidth > 768) {
+      this.headerSectionAnim();
+    }
   },
 };
 </script>

@@ -13,12 +13,21 @@ section.product
 <script>
 import partsTitle from "./parts/parts-title.vue";
 export default {
-
   props: {
-    productItem: Array
+    productItem: Array,
   },
   components: {
     partsTitle,
+  },
+  methods: {
+    productSectionAnim() {
+      this.$store.commit("productSectionAnim");
+    },
+  },
+  mounted() {
+    if (window.innerWidth > 768) {
+      this.productSectionAnim();
+    }
   },
 };
 </script>

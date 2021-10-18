@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
     state: {
         product: {
@@ -225,6 +227,23 @@ export default {
         product(state, payload) {
             console.log(state.product);
         },
+        productSectionAnim() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            let aboutItems = document.querySelectorAll('.product-wrap > *')
+
+            aboutItems.forEach((item) => {
+                gsap.from(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        toggleActions: "restart pause play pause",
+                    },
+                    opacity: 0,
+                    y: 30,
+                    duration: .7,
+                });
+            })
+        }
     },
     actions: {
         product({ commit, state }, products) {

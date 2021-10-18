@@ -88,6 +88,6 @@ export default {
           window.scroll(0, scrollPosition);
         }
       }
-    }
+    },
   }
 };

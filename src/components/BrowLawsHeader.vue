@@ -14,7 +14,7 @@ section.header
         )
           span.header__avatar-img
             img(:src="require('@/assets/img/' + item.src)")
-          h3.header__avatar-nails-title {{ item.title }}
+          h3.header__avatar-title {{ item.title }}
       .header__info
         .header__info-bg
           img(:src="require('@/assets/img/' + header.info.bg)")
@@ -59,10 +59,6 @@ export default {
 
   @media (min-width: 720px) {
     padding: 150px 0;
-  }
-
-  @media (min-width: 769px) {
-    padding: 200px 0;
   }
 
   @media (min-width: 1920px) {
@@ -222,10 +218,10 @@ export default {
   }
 }
 
-.header__avatar-perm,
-.header__avatar-brow,
-.header__avatar-eyelashes,
-.header__avatar-nails {
+.header__avatar-permanentbrow,
+.header__avatar-laminationbrow,
+.header__avatar-permanentlips,
+.header__avatar-permanenteyes {
   position: relative;
   display: block;
   width: 100%;
@@ -268,22 +264,22 @@ export default {
   }
 }
 
-.header__avatar-perm,
-.header__avatar-brow,
-.header__avatar-eyelashes,
-.header__avatar-nails {
+.header__avatar-permanentbrow,
+.header__avatar-laminationbrow,
+.header__avatar-permanentlips,
+.header__avatar-permanenteyes {
   img {
     filter: drop-shadow(2px 4px 6px black) grayscale(0.2);
   }
 
   &:hover {
-    .header__avatar-nails-title::before {
+    .header__avatar-title::before {
       background: rgba(0, 0, 0, 0.6);
     }
   }
 }
 
-.header__avatar-perm {
+.header__avatar-permanentbrow {
   grid-area: avatarPerm;
 
   @media (min-width: 480px) {
@@ -302,7 +298,7 @@ export default {
   }
 }
 
-.header__avatar-brow {
+.header__avatar-laminationbrow {
   grid-area: avatarBrow;
 
   @media (min-width: 480px) {
@@ -321,7 +317,7 @@ export default {
   }
 }
 
-.header__avatar-eyelashes {
+.header__avatar-permanentlips {
   grid-area: avatarEye;
 
   @media (min-width: 480px) {
@@ -340,7 +336,7 @@ export default {
   }
 }
 
-.header__avatar-nails {
+.header__avatar-permanenteyes {
   grid-area: avatarNail;
 
   @media (min-width: 480px) {
@@ -359,7 +355,7 @@ export default {
   }
 }
 
-.header__avatar-nails-title {
+.header__avatar-title {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -444,6 +440,7 @@ export default {
     object-position: center;
     pointer-events: none;
     height: 100%;
+    filter: grayscale(.2);
   }
 }
 
@@ -451,7 +448,7 @@ export default {
   margin-bottom: 30px;
   text-align: center;
   font-size: 20px;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 2px;
   font-family: var(--linkFont);
   border: 2px solid var(--mainPincClr);

@@ -1,32 +1,15 @@
 <template lang="pug">
 #page.page
-  header
-    brow-laws-page-back
-    brow-laws-sidebar
-  main
-    <router-view/>
-    .container.relative
-      brow-laws-sign-up
-      brow-laws-contact
-  footer
-    .container.relative
-      brow-laws-footer
+  //- BrowLawsPreloader
+  <router-view/>
 </template>
 
 <script>
-import BrowLawsPageBack from "./components/BrowLawsPageBack.vue";
-import BrowLawsSidebar from "./components/BrowLawsSidebar.vue";
-import BrowLawsSignUp from "./components/BrowLawsSignUp.vue";
-import BrowLawsContact from "./components/BrowLawsContact.vue";
-import BrowLawsFooter from "./components/BrowLawsFooter.vue";
+import BrowLawsPreloader from "./components/BrowLawsPreloader.vue";
 export default {
   name: "Home",
   components: {
-    BrowLawsPageBack,
-    BrowLawsSidebar,
-    BrowLawsSignUp,
-    BrowLawsContact,
-    BrowLawsFooter,
+    BrowLawsPreloader,
   },
   mounted() {
     let recaptchaScript = document.createElement("script");
@@ -71,6 +54,10 @@ export default {
     rgb(164, 188, 214) 0%,
     rgb(89, 125, 163) 100%
   );
+}
+
+body {
+  user-select: none;
 }
 
 .container {

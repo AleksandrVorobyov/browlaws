@@ -14,8 +14,8 @@ section#about.about
     .about__body-text-block
       p.about__body-text(v-for="item in about.content.tools") {{ item }}
     .about__body-img
-      img(src="@/assets/img/about/01.jpg")
-      img(src="@/assets/img/about/02.jpg")
+      img(:src="require('@/assets/img/' + about.textBLockImg.imgOne)")
+      img(:src="require('@/assets/img/' + about.textBLockImg.imgTwo)")
 </template>
 <script>
 import { mapGetters } from "vuex";

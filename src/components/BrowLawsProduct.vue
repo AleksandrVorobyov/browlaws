@@ -58,9 +58,8 @@ export default {
     padding: 0 30px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 970px) {
     padding: 0 50px;
-    gap: 30px 70px;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -68,17 +67,25 @@ export default {
 .product__img-block {
   position: relative;
   width: 100%;
+  max-width: 400px;
   height: 500px;
   border-radius: 20px;
   border: 3px solid var(--mainPincClr);
   transform: skew(-5px);
   overflow: hidden;
+  margin: 0 auto;
+
+  @media (min-width: 970px) {
+    max-width: 100%;
+    margin: 0;
+  }
 
   .product__img {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 90%;
+
     height: 90%;
     transform: translate(-50%, -50%);
 
@@ -123,7 +130,7 @@ export default {
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    animation: productImgBg 2s linear .5s infinite alternate-reverse;
+    animation: productImgBg 2s linear 0.5s infinite alternate-reverse;
     z-index: -3;
   }
 }

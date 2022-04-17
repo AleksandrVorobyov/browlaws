@@ -77,7 +77,7 @@ export default {
                 gsap.from(item, {
                     scrollTrigger: {
                         trigger: item,
-                        toggleActions: "restart pause play pause",
+                        toggleActions: "play pause play pause",
                     },
                     opacity: 0,
                     y: 30,

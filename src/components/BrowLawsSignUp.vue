@@ -5,7 +5,7 @@ section#sign-up.sign-up
       .sign-up__title
         parts-title(:text="signUp.title")
       .sign-up__subtitle
-        h5.sign-up__subtitle-text Вы можете записаться через нашу онлайн форму или написать нам в один из мессенджеров!
+        h5.sign-up__subtitle-text {{ signUp.subtitle }}
       .sign-up__cards
         a.sign-up__card(
           v-for="item in signUp.social",

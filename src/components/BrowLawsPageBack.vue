@@ -53,6 +53,11 @@ export default {
   @media (min-width: 1920px) {
     width: calc(100% - 400px);
   }
+
+  * {
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
 .page-back-top {

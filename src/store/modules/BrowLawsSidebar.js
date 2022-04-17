@@ -74,7 +74,6 @@ export default {
     sidebarUnlock() {
       const sidebar = document.getElementById("sidebar");
       const sidebarBtn = document.getElementById("sidebarBtn");
-
       sidebar.classList.toggle("sidebar--active");
       sidebarBtn.classList.toggle("sidebar__btn--active");
     },
@@ -84,13 +83,13 @@ export default {
         let scrollPosition = window.pageYOffset;
 
         if (!body.classList.contains("body--hidden")) {
-          body.classList.toggle("body--hidden");
+          body.classList.add("body--hidden");
           body.style.top = "-" + scrollPosition + "px";
           document.body.setAttribute("data-body-scroll-fix", scrollPosition);
         } else {
           scrollPosition = document.body.getAttribute("data-body-scroll-fix");
           document.body.removeAttribute("data-body-scroll-fix");
-          body.classList.toggle("body--hidden");
+          body.classList.remove("body--hidden");
           window.scroll(0, scrollPosition);
         }
       }

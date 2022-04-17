@@ -16,6 +16,7 @@ export default {
     window.onload = function () {
       setTimeout(() => {
         document.querySelector(".preloader").classList.add("preloader-remove");
+        document.querySelector("body").classList.remove("body--hidden");
       }, 3000);
     };
   },

@@ -2,7 +2,10 @@
 section#sidebar.sidebar
   .sidebar-wrap
     .sidebar__logo
-      router-link.sidebar__logo-link(to="/")
+      router-link.sidebar__logo-link(
+        to="/",
+        @click="fixedPage(), sidebarUnlock(), scrollToTop()"
+      )
         img(
           :src="require('@/assets/img/' + sidebar.logo.src)",
           :alt="sidebar.logo.alt"
@@ -13,8 +16,8 @@ section#sidebar.sidebar
       ul.sidebar__list-wrap
         li.sidebar__list-item(v-for="list in sidebar.list")
           router-link.sidebar__list-link(
-            :to="list.href",
-            @click="fixedPage(), sidebarUnlock(), scrollToTop()"
+            @click="fixedPage(), sidebarUnlock(), scrollToTop()",
+            :to="list.href"
           )
             span {{ list.text }}
     .sidebar__contact
@@ -123,6 +126,7 @@ export default {
   width: 100%;
   height: 200px;
   border-bottom: 2px solid var(--mainPincClr);
+
   img {
     position: relative;
     object-fit: contain;
@@ -141,7 +145,6 @@ export default {
 }
 
 .sidebar__title,
-.sidebar__social-title,
 .sidebar__social-title {
   display: flex;
   justify-content: center;
@@ -241,6 +244,11 @@ export default {
   list-style: none;
   display: grid;
   gap: 20px;
+  margin-bottom: 50px;
+
+  @media (min-width: 480px) {
+    margin-bottom: 0;
+  }
 }
 
 .sidebar__social-list-link.sidebar__social-instagram:hover {

@@ -22,6 +22,7 @@ export default {
           class: "sign-up__card--whatsapp",
         },
       ],
+      subtitle: "Вы можете записаться через нашу онлайн форму или написать нам в один из мессенджеров!"
     },
   },
   getters: {

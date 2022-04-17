@@ -1,6 +1,6 @@
 <template lang="pug">
 #page.page
-  //- BrowLawsPreloader
+  BrowLawsPreloader
   <router-view/>
 </template>
 

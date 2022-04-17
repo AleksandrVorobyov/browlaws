@@ -18,7 +18,7 @@ export default {
         list: [
           {
             href: "/permanent",
-            title: "Перманет",
+            title: "Перманент",
             src: "header/permanent.jpg",
             class: "header__avatar-perm",
           },

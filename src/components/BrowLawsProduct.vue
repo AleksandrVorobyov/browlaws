@@ -65,28 +65,22 @@ export default {
   }
 }
 
-.product__img-block:first-child {
+.product__img-block {
   position: relative;
-  width: calc(100% - 60px);
-  margin: 0 auto;
-  height: 400px;
-  align-items: center;
-
-  @media (min-width: 480px) {
-    margin: 0;
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    height: 500px;
-  }
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  border: 3px solid var(--mainPincClr);
+  transform: skew(-5px);
+  overflow: hidden;
 
   .product__img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 350px;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
 
     @media (min-width: 768px) {
       height: 450px;
@@ -94,8 +88,8 @@ export default {
 
     img {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0%;
+      left: 0%;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -103,40 +97,46 @@ export default {
     }
   }
 
-  .product__img:nth-child(odd) {
-    height: 200px;
-    top: 50%;
-    transform: translateY(-50%) skewX(-20deg);
-
-    @media (min-width: 768px) {
-      height: 300px;
-    }
-  }
-
-  .product__img:nth-child(even) {
-    border: 10px solid #fff;
-    width: 40%;
+  &::before {
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) skewX(-20deg);
+    transform: translate(-50%, -50%);
+    content: "";
+    background: var(--mainPincClr);
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    animation: productImgBg 2s linear 0s infinite alternate-reverse;
+    z-index: -5;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    background: var(--mainPincClr);
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    animation: productImgBg 2s linear .5s infinite alternate-reverse;
+    z-index: -3;
   }
 }
 
-.product__img-block {
-  position: relative;
-  width: 100%;
-  height: 400px;
+@keyframes productImgBg {
+  0% {
+    width: 80%;
+    height: 80%;
+  }
 
-  &::before {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    border-radius: 20px;
-    content: "";
-    border: 3px solid var(--mainPincClr);
+  100% {
+    width: 110%;
+    height: 110%;
   }
 }
 

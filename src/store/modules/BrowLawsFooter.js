@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 export default {
   state: {
     footer: {
-      copy: "© Brow&Laws 2018 - 2021. Все права защищены.",
+      copy: "© Brow&Laws 2018 - 2022. Все права защищены.",
     },
   },
   getters: {

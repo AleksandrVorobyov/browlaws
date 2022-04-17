@@ -7,20 +7,20 @@ export default {
           text: "Главная страница",
         },
         {
-          href: "/permanent",
-          text: "Перманентый макияж",
+          href: "/permanentlips",
+          text: "Перманент губ",
         },
         {
-          href: "/brow",
+          href: "/permanentbrow",
+          text: "Перманент бровей",
+        },
+        {
+          href: "/permanenteyes",
+          text: "Перманент межреснички",
+        },
+        {
+          href: "/laminationbrow",
           text: "Ламинирование бровей",
-        },
-        {
-          href: "/eyelashes",
-          text: "Ламинирование ресниц",
-        },
-        {
-          href: "/eyelEextensions",
-          text: "Наращивание ресниц",
         },
       ],
       logo: {
@@ -49,6 +49,12 @@ export default {
             title: "Наш whatsapp",
             class: "sidebar__social-whatsapp",
           },
+          {
+            href: "https://vk.com/browlaws",
+            src: "social/vk.png",
+            title: "Наш vkontakte",
+            class: "sidebar__social-vk",
+          },
         ],
       },
       contact: {
@@ -69,25 +75,25 @@ export default {
       const sidebar = document.getElementById("sidebar");
       const sidebarBtn = document.getElementById("sidebarBtn");
 
-      sidebar.classList.toggle("sidebar--active")
-      sidebarBtn.classList.toggle("sidebar__btn--active")
+      sidebar.classList.toggle("sidebar--active");
+      sidebarBtn.classList.toggle("sidebar__btn--active");
     },
     fixedPage() {
       if (window.innerWidth < 1920) {
         const body = document.querySelector("body");
         let scrollPosition = window.pageYOffset;
 
-        if (!body.classList.contains('body--hidden')) {
+        if (!body.classList.contains("body--hidden")) {
           body.classList.toggle("body--hidden");
-          body.style.top = '-' + scrollPosition + 'px';
-          document.body.setAttribute('data-body-scroll-fix', scrollPosition);
+          body.style.top = "-" + scrollPosition + "px";
+          document.body.setAttribute("data-body-scroll-fix", scrollPosition);
         } else {
-          scrollPosition = document.body.getAttribute('data-body-scroll-fix');
-          document.body.removeAttribute('data-body-scroll-fix');
+          scrollPosition = document.body.getAttribute("data-body-scroll-fix");
+          document.body.removeAttribute("data-body-scroll-fix");
           body.classList.toggle("body--hidden");
           window.scroll(0, scrollPosition);
         }
       }
     },
-  }
+  },
 };

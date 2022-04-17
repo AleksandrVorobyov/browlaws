@@ -1,14 +1,15 @@
 <template lang="pug">
-#nailsPage.nails-page
+#browPage.brow-page
   .container.relative
-    brow-laws-product(:productItem="product.eyelEextensions")
+    brow-laws-product(:productItem="product.laminationbrow")
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import BrowLawsProduct from "../components/BrowLawsProduct.vue";
+
 export default {
-  name: "nailsPage",
+  name: "browPage",
   components: {
     BrowLawsProduct,
   },

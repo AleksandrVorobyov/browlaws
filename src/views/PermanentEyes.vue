@@ -1,14 +1,14 @@
 <template lang="pug">
-#permanentPage.permanent-page
+#nailsPage.nails-page
   .container.relative
-    brow-laws-product(:productItem="product.permanent")
+    brow-laws-product(:productItem="product.permanenteyes")
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import BrowLawsProduct from "../components/BrowLawsProduct.vue";
 export default {
-  name: "permanentPage",
+  name: "nailsPage",
   components: {
     BrowLawsProduct,
   },

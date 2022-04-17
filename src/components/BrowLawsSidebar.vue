@@ -169,7 +169,7 @@ export default {
   position: relative;
   padding: 15px 30px;
   color: var(--mainPincClr);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 1px;
@@ -179,7 +179,7 @@ export default {
 
   @media (min-width: 480px) {
     letter-spacing: 2px;
-    font-size: 26px;
+    font-size: 22px;
   }
 
   &::before {
@@ -253,6 +253,9 @@ export default {
 
 .sidebar__social-list-link.sidebar__social-whatsapp:hover {
   background: var(--socialLinearWhat);
+}
+.sidebar__social-list-link.sidebar__social-vk:hover {
+  background: var(--socialLinearVk);
 }
 
 .sidebar__social-list-link {

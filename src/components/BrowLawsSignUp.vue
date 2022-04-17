@@ -126,7 +126,7 @@ export default {
   overflow: hidden;
   transition: transform 0.4s linear, background 0.4s linear, filter 0.4s linear;
   box-shadow: 0px 0px 15px var(--mainPincClr);
-  filter: grayscale(0.7);
+  filter: grayscale(0.5);
 
   &:hover {
     transform: translateY(-10px);

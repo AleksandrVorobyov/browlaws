@@ -8,24 +8,24 @@ const routes = [
     component: Home,
   },
   {
-    path: "/permanent",
-    name: "Permanent",
-    component: () => import("../views/Permanent.vue"),
+    path: "/permanentbrow",
+    name: "PermanentBrow",
+    component: () => import("../views/PermanentBrow.vue"),
   },
   {
-    path: "/brow",
-    name: "Brow",
-    component: () => import("../views/Brow.vue"),
+    path: "/permanentlips",
+    name: "PermanentLips",
+    component: () => import("../views/PermanentLips.vue"),
   },
   {
-    path: "/eyelashes",
-    name: "Eyelashes",
-    component: () => import("../views/Eyelashes.vue"),
+    path: "/permanenteyes",
+    name: "PermanentEyes",
+    component: () => import("../views/PermanentEyes.vue"),
   },
   {
-    path: "/eyelEextensions",
-    name: "EyelEextensions",
-    component: () => import("../views/eyelEextensions.vue"),
+    path: "/laminationbrow",
+    name: "LaminationBrow",
+    component: () => import("../views/LaminationBrow.vue"),
   },
 ];
 

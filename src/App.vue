@@ -66,6 +66,11 @@ export default {
     rgb(136, 247, 103) 0%,
     rgb(14, 175, 54) 100%
   );
+  --socialLinearVk: linear-gradient(
+    90deg,
+    rgb(164, 188, 214) 0%,
+    rgb(89, 125, 163) 100%
+  );
 }
 
 .container {

@@ -17,23 +17,25 @@ export default {
           "В «Brow&Laws» работают настоящие мастера своего дела, обладающие большим опытом и владеющие самыми актуальными техниками и технологиями, способными сделать вашу внешность прекрасной. Стремление к непрерывному совершенствованию всей творческой команды салона, регулярное обучение в лучших школах beauty-индустрии и индивидуальный подход к каждому клиенту помогают нам создавать образы, сочетающие в себе моду и красоту. Красивый и стильный интерьер, доброжелательную тёплую атмосферу и великолепный сервис успели оценить наши клиенты.",
         ],
       },
-      carousel:
-      {
+      carousel: {
         slide: [
           {
-            src: "about/01.jpg",
+            src: "about/slides/01.jpg",
           },
           {
-            src: "about/02.jpg",
+            src: "about/slides/02.jpg",
           },
           {
-            src: "about/03.jpg",
+            src: "about/slides/03.jpg",
           },
           {
-            src: "about/04.jpg",
+            src: "about/slides/04.jpg",
           },
           {
-            src: "about/05.jpg",
+            src: "about/slides/05.jpg",
+          },
+          {
+            src: "about/slides/06.jpg",
           },
         ],
         class: "about-carousel",
@@ -70,7 +72,7 @@ export default {
     aboutSectionAnim() {
       gsap.registerPlugin(ScrollTrigger);
 
-      let aboutItems = document.querySelectorAll('.about-wrap > *')
+      let aboutItems = document.querySelectorAll(".about-wrap > *");
 
       aboutItems.forEach((item) => {
         gsap.from(item, {
@@ -80,9 +82,9 @@ export default {
           },
           opacity: 0,
           y: 30,
-          duration: .7,
+          duration: 0.7,
         });
-      })
-    }
-  }
+      });
+    },
+  },
 };

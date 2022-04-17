@@ -13,7 +13,7 @@ export default {
         },
         {
           src: "social/telegram.png",
-          href: "https://telegram.im/@liziliska",
+          href: "https://t.me/browlawslizi",
           class: "sign-up__card--telegram",
         },
         {
